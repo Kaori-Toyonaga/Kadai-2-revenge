@@ -62,7 +62,7 @@ header ul:after {
 /* ここから */
 .function {
   height: 520px;
-  width: auto;
+  width: 100%;
   background-color: #D3D3D3;
   font-family: Century;
 }
@@ -70,16 +70,14 @@ header ul:after {
   padding-top: 40px;
 }
 .function-images {
-  float: right;
-  display: table;
-  margin-right: 300px;
+  width: 1500px;
+  height: 500px;
+  margin: 0 auto;
+  width: 800px;
 }
 .function-image {
   float: left;
-  margin-top: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
-  display: table-cell
+  padding: 30px;
 }
 .clearfix:after {
   content: "";
