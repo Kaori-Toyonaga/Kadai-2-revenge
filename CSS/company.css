@@ -1,0 +1,45 @@
+.company tr{
+  height: 5rem;
+}
+.company th{
+  width: 100px;
+  background-color: #B1B1B1;
+  color: #fff;
+  border-bottom: solid 1px #fff;
+}
+/*「border-collapse: collapse」により<td>の隙間はなくなりましたが、
+<th>のほうの白い境界線が消えてしまいました。
+<th>にもborderを設定しましょう
+<th>のほうは、下部にだけ境界があれば良いのでborder-bottomを設定します。*/
+.company td{
+  width: 560px;
+  padding-left: 1rem;
+  border: solid 1px #B1B1B1;/*solid=1本線*/
+}
+/*<tr>タグは一行を表すので、一行の高さをheight: 5remで設定、
+<th>タグは見出しなので、widthと色の設定、
+<td>タグは内容なので同じくwidthと、
+文字が見やすいようpadding-left: 1remとして行頭に一文字分すきまをいれました。*/
+.company{
+  border-collapse: collapse;
+}
+/*tableタグを使用する際、セルとセルの間に隙間が空く。
+これは、各セルの間隔を指定するborder-collapseというプロパティの初期値が
+separate(各セルの周囲に分離した枠を表示させる)となっているためです。
+
+border-collapseプロパティの値は以下の通りです
+　separate：各セルの周囲に分離した枠を表示させる
+　collapse：セルを結合して、表の端から端まで連続した枠で表示させる
+今回は分離させたくないので、border-collapse: collapseを設定します。
+/* companyクラスの子要素であるtr要素の最後の要素のth要素を指定 */
+.company tr:last-child th {/*最後のtr行のth部分だけという指定*/
+  border-color: #B1B1B1;
+}/*最後の要素だけ変えるセレクタ*/
+
+/*最下部の枠線に微妙に高さの差ができた。
+<th>の白いborderと<td>のグレーのボーダーが、高さの差のように見えてしまっているからです。
+一番下の<th>のボーダーの色だけをグレーに変えられれば解消できそうです。
+
+たくさんある<li>要素のなかの特定のひとつだけ変えたい時、
+似クラス:「last-child」を用いることで便利にセレクタ指定できます。
+:last-childは、最後の子要素にスタイルを適用することが出来る疑似クラスです。*/

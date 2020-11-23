@@ -1,0 +1,186 @@
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+body {
+  width: 980px;
+  margin: 0 auto;
+  height: 100%;
+}
+ul {
+/*余白を削除*/
+  margin: 0;
+  padding: 0;
+}
+li {
+/*リストの黒丸を削除*/
+  list-style: none;
+}
+.header {
+  background-color: #F5B4B3;
+  height: 50px;
+  font-size: 1.5rem;
+}
+ul.top_menu {
+  float: right;
+}
+.top_menu li {
+/*<li>タグ（リストの「枠」部分）に適用する*/
+  float: left;
+/*autoにすることで幅が子要素（「.top_menu li a」で設定した内容＝padding 15pxの範囲）に依存する*/
+  width: auto;
+}
+.top_menu li a {
+/*<a>タグ（リストの「テキスト」部分）に「hover」をつけてマウスオーバーした際にアンダーラインを表示させる*/
+  color: #fff;
+/*下線を削除*/
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+}
+.top_menu li a:hover {
+  text-decoration: underline;
+}
+.logo_image {
+  width: 110px;
+  float: left;
+  margin: 0;
+}
+.image_area{
+  width: 100%;
+}
+.wrapper{
+  margin-top: 10px;
+}
+.side_menu{
+  width: 300px;
+  float: left;
+}
+.side_menu li{
+  background-color: #F5B4B3;
+  height: 6rem;
+  margin-bottom: 10px;
+  width: auto;
+}
+.side_menu li a{
+  font-size:2rem;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 2rem;
+}
+.banner img{
+  width: 100%;
+}
+.banner{
+  margin-top: 20px;
+}
+.clearfix:after {
+/*要素の後に下記設定を適用*/
+  content: "";
+/*親要素の高さを指定していない場合でも、子要素の高さで親要素の高さを維持*/
+  display: block;
+/*float(left&right)しても後続するコンテンツが浮かせた部分に上がってこないように解除*/
+  clear: both;
+}
+.side_menu li:hover{
+  opacity: 0.6;/*opacity=半透明*/
+}
+.banner a:hover {
+  opacity: 0.6;
+}
+.content{
+  width: 660px;
+  margin-left:20px;/*margin=外側*/
+  float: left;
+  font-size: 1.5rem;
+}
+.news{
+  height: 200px;
+  background-color: #FCE8E7;
+  padding: 20px;/*padding=内側*/
+  overflow: scroll;/*入りきらない内容はスクロールして見られるようになる*/
+  line-height: 2;/*行間は2px*/
+}
+.footer{
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  background-color: #4D4D4D;
+  display: table;
+  /*今回中央揃えしたい「footer」のテキストは<p>要素です。
+  vertical-alignはインライン要素とテーブルセルにしか効かない。
+  なので「footer」のテキストは<p>要素でブロックレベル要素なので効かない。
+  テーブルセルではない「子」をテーブルとしてあるかうためにその「親」要素に<table>のような振る舞いをさせる*/
+}
+.footer p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;/*左右の中央揃*/
+  vertical-align: middle;/*垂直方向の中央揃*/
+  display: table-cell;
+  /*vertical-alignはインライン要素とテーブルセルにしか効かない。
+  今回中央揃えしたいのは<p>要素です。<p>要素はブロックレベル要素なので効かない。
+  テーブルセルではない「子」要素に<table>のような振る舞いをさせる*/
+}
+/*ブラウザ領域いっぱいに高さが確保されるよう、html,body双方にheight: 100%を指定します。
+htmlはルート要素なので、100%と指定すると高さがブラウザの表示領域と同じになります。
+この指定があるおかげで、中身のコンテンツがブラウザの表示領域以内に収まってしまった場合でも、html,body要素はブラウザの表示領域分の高さを保持できます。
+また、これまでbodyに設定していたcssは、.containerに移しておきましょう。*/
+.container {
+  width: 980px;
+  margin: 0 auto;
+  min-height: 100%;/*子要素の高さが100px未満の場合は100pxを保ちますが、子要素の高さが200pxになるとそれに合わせて、200pxになります。*/
+  position: relative
+}
+.wrapper{
+  margin-top: 10px;
+  padding-bottom: 100px;
+}
+.banner_content {
+  /* 上部のマージンを設定 */
+  margin-top: 10px;
+  /* <table>のように振る舞う */
+  display: table;
+}
+.banner_content p {
+  /* <td>のように振る舞う */
+  display: table-cell;
+}
+.banner_content p img {
+  /* 画像サイズの修正 */
+  width: 100%;
+}
+.side_menu .point{
+  background-color: #FCECEC;
+}
+.side_menu .point a{
+  color: #4D4D4D;
+}
+/*「もともとこの<li>タグには
+.side_menu li{
+  background-color: #F5B4B3;
+  height: 6rem;
+  margin-bottom: 10px;
+}
+.side_menu li a:hover{
+  opacity: 0.5;
+}
+.side_menu li a{
+  font-size:2rem;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 2rem;
+}
+というスタイルが設定されていたのに、新しい色を設定できるのだろうか？」
+実は、CSSはCascading Style Sheetの名のとおり、カスケード（滝）のように先に宣言されたstyleが、後から宣言されるstyleによって 継承、上書き されていくのです。
+そのため、style.cssに.side_menu liに対するstyleを設定し、 そのあとの行で.pointに対するstyleを設定すれば、.pointの内容が優先され、その他のstyleは.side_menu liが継承されるはずです。
+その他にも、何が優先されるのかが決まっています。
+
+優先順位は上記のとおりですが、実際は.side_menu liのように組み合わせて使うこともあり、その場合は優先度も変わってきます。
+.side_menu liはclassセレクタと要素セレクタの2つにより指定しているのに対し、.pointはclassセレクタ1つで指定しているので、今回は.side_menu liの内容が優先されてしまいます。
+ですので、優先させたい.pointの詳細度を高めておきましょう。
+
+classセレクタ２つとなり、.side_menu liよりも優先されるようになりました。*/

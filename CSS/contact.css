@@ -1,0 +1,38 @@
+.contact {
+  position: relative;
+  top: 0px;
+  left: 30px;
+}
+.contact tr th {
+  font-size: 1.75rem;
+  height: 7rem;
+  width: 150px;
+  padding-right: 10px;
+  text-align: right;
+  vertical-align: middle;
+}
+.contact tr td {
+  height: 7rem;
+  font-size: 2rem;
+}
+.contact-size {
+  width: 480px;
+}
+.contact-content {
+  height: 3.5rem;
+  width: 480px;
+}
+#botton {
+  background-color: #42A0B0;
+  padding: 10px 20px;
+  font-size: 3rem;
+  color: #FFFFFF;
+  border-style: none;
+  text-align: justify;
+  position: relative;
+  top: 0px;
+  left: 600px;
+}
+#botton:hover {
+  opacity: 0.6;
+}
